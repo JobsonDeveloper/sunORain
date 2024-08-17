@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Abel", sans-serif;
+  background: linear-gradient(to right, #60bdff, #4bc1e9);
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=index.css.map */

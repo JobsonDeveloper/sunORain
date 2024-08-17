@@ -1,35 +1,31 @@
 /* eslint-disable react/prop-types */
+import './Weatherinfo.css';
+
 function WeatherInfo({ weather }) {
-    if (weather.weather === undefined) {
-        return (
-            <>
 
-            </>
-        )
+    function fahrenheit(degree) {
+        return Math.round((9 * degree / 5) + 32);
     }
-    else {
 
-        console.log(weather);
+    return (
+        <div className="weatherContainer">
+            <h2>{weather.name}</h2>
+            <div className='weatherInfo'>
+                <img src={ `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png` } alt="" />
+                <p className='temperature'>{ fahrenheit(weather.main.temp) }°F</p>
+            </div>
 
-        return (
-            <>
-                <h2>Cidade: {weather.name}</h2>
-                <div>
-                    <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" />
-                    <p>Temperatura: {Math.round(weather.main.temp)}°C</p>
-                </div>
+            <p className='description'>{ weather.weather[0].description }</p>
 
-                <p>Descrição: {weather.weather[0].description}</p>
+            <div className='details'>
+                <p>Thermal Sensation: { fahrenheit(weather.main.feels_like) }°F</p>
+                <p>Humidity: { weather.main.humidity }%</p>
+                <p>Pressure: { weather.main.pressure }</p>
+            </div>
 
-                <div>
-                    <p>Sencação térmica: {Math.round(weather.main.feels_like)}°C</p>
-                    <p>Umidade: {weather.main.humidity}%</p>
-                    <p>Pressão: {weather.main.pressure}</p>
-                </div>
+        </div>
+    );
 
-            </>
-        );
-    }
 }
 
 export default WeatherInfo;
