@@ -95,7 +95,7 @@ function App() {
 
         <img src={logo} alt="Logo" className='logo' />
         <div className='searshCity'>
-          <input ref={inputRef} type="text" placeholder='Write the name of the City' />
+          <input ref={inputRef} type="text" placeholder='Nome da cidade' />
           <button onClick={searchCity}></button>
         </div>
 
