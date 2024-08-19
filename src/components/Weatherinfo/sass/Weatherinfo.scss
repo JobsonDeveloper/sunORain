@@ -4,7 +4,6 @@
     margin: 20px 0;
     display: grid;
     gap: 10px;
-    width: 100%;
     justify-content: space-around;
 
     & .forecast {
@@ -92,28 +91,28 @@
 
         & .forecast {
             & h2 {
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
     
             & .weatherInfo {
                 & img {
-                    width: 100px;
+                    width: 80px;
                 }
         
                 & .temperature {
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
             }
             
             & .description {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
         }
         
         & .details {
             display: flex;
             flex-direction: column;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -121,13 +120,17 @@
 @media (min-width: 992px) {
     .weatherContainer {
         flex-direction: column;
+        margin: 0;
+        justify-content: center;
+        height: max-content;
 
         & .details {
             flex-direction: row;
             justify-content: center;
+            height: max-content;
 
             & li {
-                height: 100%;
+                height: auto;
             }
         }
     }

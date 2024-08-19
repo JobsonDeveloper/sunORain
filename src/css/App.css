@@ -58,7 +58,7 @@
   background-color: transparent;
   color: #b9b9b9;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2156862745);
 }
@@ -103,7 +103,7 @@
 
 @media (min-width: 576px) {
   .container .logo {
-    width: 100px;
+    width: 80px;
   }
   .container input {
     width: 280px;
@@ -117,7 +117,7 @@
     height: 30px;
   }
   .container .atribuition .atribuition-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .container .atribuition .atribuition-list li a {
     text-decoration: none;
@@ -129,7 +129,7 @@
     display: grid;
     grid-template-areas: "logo logo" "search search" "today nextFourDays" "atribuitions atribuitions";
     justify-items: center;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
   }
   .container .forecastData {

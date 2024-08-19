@@ -4,7 +4,6 @@
   margin: 20px 0;
   display: grid;
   gap: 10px;
-  width: 100%;
   justify-content: space-around;
 }
 .weatherContainer .forecast {
@@ -75,33 +74,37 @@
     gap: 50px;
   }
   .weatherContainer .forecast h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   .weatherContainer .forecast .weatherInfo img {
-    width: 100px;
+    width: 80px;
   }
   .weatherContainer .forecast .weatherInfo .temperature {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .weatherContainer .forecast .description {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .weatherContainer .details {
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 992px) {
   .weatherContainer {
     flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    height: max-content;
   }
   .weatherContainer .details {
     flex-direction: row;
     justify-content: center;
+    height: max-content;
   }
   .weatherContainer .details li {
-    height: 100%;
+    height: auto;
   }
 }
 
