@@ -1,0 +1,158 @@
+@keyframes logoAnimation {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.container {
+  height: 100%;
+  padding: 20px 10px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("../assets/sky.webp");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.container .forecastData {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  min-height: 200px;
+  transition: 1s;
+}
+.container .logo {
+  width: 60px;
+  animation: logoAnimation 2.5s linear;
+}
+.container input {
+  padding: 10px;
+  width: 210px;
+  outline: none;
+  margin-top: 20px;
+  background-color: transparent;
+  color: #b9b9b9;
+  text-align: center;
+  font-size: 0.9rem;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2156862745);
+}
+.container input::placeholder {
+  color: rgba(197, 197, 197, 0.5176470588);
+  font-size: 0.9rem;
+}
+.container button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-image: url("../assets/lupa.svg");
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+.container .atribuition {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  align-items: center;
+}
+.container .atribuition .atribuition-title {
+  font-size: 0.8rem;
+}
+.container .atribuition .atribuition-list {
+  list-style-type: none;
+  display: flex;
+  text-wrap: wrap;
+  gap: 5px;
+}
+.container .atribuition .atribuition-list li a {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 576px) {
+  .container .logo {
+    width: 100px;
+  }
+  .container input {
+    width: 280px;
+    font-size: 1.2rem;
+  }
+  .container input::placeholder {
+    font-size: 1.1rem;
+  }
+  .container button {
+    width: 30px;
+    height: 30px;
+  }
+  .container .atribuition .atribuition-title {
+    font-size: 1.2rem;
+  }
+  .container .atribuition .atribuition-list li a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-areas: "logo logo" "search search" "today nextFourDays" "atribuitions atribuitions";
+    justify-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+  .container .forecastData {
+    flex-direction: row;
+  }
+  .container .logo {
+    grid-area: logo;
+  }
+  .container .searshCity {
+    grid-area: search;
+  }
+  .container .weatherContainer {
+    grid-area: today;
+    gap: 0;
+    height: 340px;
+  }
+  .container .weatherContainerFiveDays {
+    grid-area: nextFourDays;
+  }
+  .container .atribuition {
+    grid-area: atribuitions;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

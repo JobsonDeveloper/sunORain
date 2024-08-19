@@ -7,9 +7,22 @@
 
 body {
   font-family: "Abel", sans-serif;
-  background: linear-gradient(to right, #60bdff, #4bc1e9);
   color: #1a1a1a;
   line-height: 1.6;
+  min-height: 100vh;
+  height: 100%;
+}
+body::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #207cc8;
+}
+
+#root {
+  min-height: 100vh;
+  height: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

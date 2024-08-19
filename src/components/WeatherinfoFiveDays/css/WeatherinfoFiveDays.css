@@ -1,0 +1,66 @@
+.weatherContainerFiveDays {
+  border-radius: 10px;
+}
+.weatherContainerFiveDays h2 {
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+.weatherContainerFiveDays .weatherList {
+  flex-wrap: wrap;
+  gap: 5px;
+  row-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+.weatherContainerFiveDays .weatherList .weatherItem {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  list-style-type: none;
+  padding: 0;
+  min-width: 130px;
+  width: 130px;
+}
+.weatherContainerFiveDays .weatherList .weatherItem .forecastDay, .weatherContainerFiveDays .weatherList .weatherItem .forecastDescription {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  .weatherContainerFiveDays h2 {
+    font-size: 2rem;
+  }
+  .weatherContainerFiveDays .weatherList {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+  .weatherContainerFiveDays .weatherList .weatherItem {
+    padding: 5px;
+    width: 160px;
+  }
+  .weatherContainerFiveDays .weatherList .weatherItem li {
+    font-size: 1.2rem;
+  }
+  .weatherContainerFiveDays .weatherList .weatherItem img {
+    width: 80px;
+  }
+  .weatherContainerFiveDays .weatherList .weatherItem .forecastDay, .weatherContainerFiveDays .weatherList .weatherItem .forecastDescription {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .weatherContainerFiveDays .weatherList {
+    display: flex;
+  }
+}
+@media (min-width: 992px) {
+  .weatherContainerFiveDays .weatherList {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+/*# sourceMappingURL=WeatherinfoFiveDays.css.map */

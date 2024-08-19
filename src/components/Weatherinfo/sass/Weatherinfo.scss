@@ -1,0 +1,136 @@
+.weatherContainer {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+
+    & .forecast {
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        & h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        & .weatherInfo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            & img {
+                width: 80px;
+            }
+    
+            & .temperature {
+                font-weight: bold;
+                font-size: 2rem;
+            }
+        }
+        
+        & .description {
+            text-transform: capitalize;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    }
+
+    & .details {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1rem;
+        list-style-type: none;
+        display: grid;
+        grid-template-areas: 
+        "sensation sensation"
+        "humidity minMax";
+        gap: 5px;
+
+        & li {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            height: max-content;
+            min-width: 130px;
+            font-weight: bold;
+
+            & p {
+                font-weight: 200;
+            }
+        }
+
+        & .details-sensation {
+            grid-area: sensation;
+        }
+
+        & .details-humidity {
+            grid-area: humidity;
+        }
+
+        & .details-tempMinMax {
+            grid-area: minMax;
+            
+            
+            & span {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .weatherContainer {
+        display: flex;
+        gap: 50px;
+
+        & .forecast {
+            & h2 {
+                font-size: 2rem;
+            }
+    
+            & .weatherInfo {
+                & img {
+                    width: 100px;
+                }
+        
+                & .temperature {
+                    font-size: 2.5rem;
+                }
+            }
+            
+            & .description {
+                font-size: 1.5rem;
+            }
+        }
+        
+        & .details {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .weatherContainer {
+        flex-direction: column;
+
+        & .details {
+            flex-direction: row;
+            justify-content: center;
+
+            & li {
+                height: 100%;
+            }
+        }
+    }
+
+    
+}

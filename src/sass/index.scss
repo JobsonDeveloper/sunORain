@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+body {
+    font-family: "Abel", sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+        background-color: #ffffff66;
+        width: 10px;
+
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #207cc8;
+    }
+}
+
+#root {
+    min-height: 100vh;
+    height: 100%;
+}
+
