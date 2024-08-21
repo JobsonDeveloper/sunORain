@@ -1,111 +1,32 @@
-.weatherContainer {
-  border-radius: 10px;
-  padding: 10px;
-  margin: 20px 0;
-  display: grid;
-  gap: 10px;
-  justify-content: space-around;
-}
-.weatherContainer .forecast {
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.weatherContainer .forecast h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.weatherContainer .forecast .weatherInfo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.weatherContainer .forecast .weatherInfo img {
-  width: 80px;
-}
-.weatherContainer .forecast .weatherInfo .temperature {
-  font-weight: bold;
-  font-size: 2rem;
-}
-.weatherContainer .forecast .description {
-  text-transform: capitalize;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.weatherContainer .details {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1rem;
-  list-style-type: none;
-  display: grid;
-  grid-template-areas: "sensation sensation" "humidity minMax";
-  gap: 5px;
-}
-.weatherContainer .details li {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px;
-  height: max-content;
-  min-width: 130px;
-  font-weight: bold;
-}
-.weatherContainer .details li p {
-  font-weight: 200;
-}
-.weatherContainer .details .details-sensation {
-  grid-area: sensation;
-}
-.weatherContainer .details .details-humidity {
-  grid-area: humidity;
-}
-.weatherContainer .details .details-tempMinMax {
-  grid-area: minMax;
-}
-.weatherContainer .details .details-tempMinMax span {
-  font-weight: bold;
+:root {
+  --sr-all-padding: 10px 15px;
+  --sr-primary-color: #343434;
+  --sr-secondary-color: #D0D0D0;
+  --sr-tertiary-color: #00A3FF;
+  --sr-color-text-input: #393939;
+  --sr-primary-font-size: 1rem;
+  --sr-secondary-font-size: 1.2rem;
+  --sr-primary-transparency: rgba(255, 255, 255, .4);
 }
 
-@media (min-width: 576px) {
-  .weatherContainer {
-    display: flex;
-    gap: 50px;
-  }
-  .weatherContainer .forecast h2 {
-    font-size: 1.2rem;
-  }
-  .weatherContainer .forecast .weatherInfo img {
-    width: 80px;
-  }
-  .weatherContainer .forecast .weatherInfo .temperature {
-    font-size: 2rem;
-  }
-  .weatherContainer .forecast .description {
-    font-size: 1.2rem;
-  }
-  .weatherContainer .details {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-  }
+.sr-forecast-now {
+  background-color: red;
 }
-@media (min-width: 992px) {
-  .weatherContainer {
-    flex-direction: column;
-    margin: 0;
-    justify-content: center;
-    height: max-content;
-  }
-  .weatherContainer .details {
-    flex-direction: row;
-    justify-content: center;
-    height: max-content;
-  }
-  .weatherContainer .details li {
-    height: auto;
-  }
+.sr-forecast-now .sr-forecast-title {
+  background-color: green;
+  text-align: cente;
+}
+.sr-forecast-now .sr-forecast-title .sr-city-name {
+  font-size: var(--sr-secondary-font-size);
+  color: var(--sr-secondary-color);
+}
+.sr-forecast-now .sr-forecast-data {
+  background-color: red;
+  list-style-type: none;
+  width: 90%;
+  height: 200px;
+  background-color: var(--sr-primary-transparency);
+  border-radius: 0 20px 20px 0;
 }
 
 /*# sourceMappingURL=Weatherinfo.css.map */

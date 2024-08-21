@@ -1,139 +1,39 @@
-.weatherContainer {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px 0;
-    display: grid;
-    gap: 10px;
-    justify-content: space-around;
+:root {
+    --sr-all-padding: 10px 15px;
+    --sr-primary-color: #343434;
+    --sr-secondary-color: #D0D0D0;
+    --sr-tertiary-color: #00A3FF;
+    --sr-color-text-input: #393939;
 
-    & .forecast {
-        padding: 10px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        & h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+    --sr-primary-font-size: 1rem;
+    --sr-secondary-font-size: 1.2rem;
 
-        & .weatherInfo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    --sr-primary-transparency: rgba(255, 255, 255, .4);
+}
+
+.sr-forecast-now {
+    background-color: red;
     
-            & img {
-                width: 80px;
-            }
-    
-            & .temperature {
-                font-weight: bold;
-                font-size: 2rem;
-            }
-        }
-        
-        & .description {
-            text-transform: capitalize;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            font-weight: bold;
+    & .sr-forecast-title {
+        background-color: green;
+        text-align: cente;
+
+        & .sr-city-name {
+            font-size: var(--sr-secondary-font-size);
+            color: var(--sr-secondary-color);
         }
     }
 
-    & .details {
-        display: flex;
-        justify-content: space-around;
-        font-size: 1rem;
+    & .sr-forecast-data {
+        background-color: red;
         list-style-type: none;
-        display: grid;
-        grid-template-areas: 
-        "sensation sensation"
-        "humidity minMax";
-        gap: 5px;
-
-        & li {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 10px;
-            height: max-content;
-            min-width: 130px;
-            font-weight: bold;
-
-            & p {
-                font-weight: 200;
-            }
-        }
-
-        & .details-sensation {
-            grid-area: sensation;
-        }
-
-        & .details-humidity {
-            grid-area: humidity;
-        }
-
-        & .details-tempMinMax {
-            grid-area: minMax;
-            
-            
-            & span {
-                font-weight: bold;
-            }
-        }
+        width: 90%;
+        height: 200px;
+        background-color: var(--sr-primary-transparency);
+        border-radius: 0 20px 20px 0;
     }
 }
 
-@media (min-width: 576px) {
-    .weatherContainer {
-        display: flex;
-        gap: 50px;
+@media (min-width: 576px) {}
 
-        & .forecast {
-            & h2 {
-                font-size: 1.2rem;
-            }
-    
-            & .weatherInfo {
-                & img {
-                    width: 80px;
-                }
-        
-                & .temperature {
-                    font-size: 2rem;
-                }
-            }
-            
-            & .description {
-                font-size: 1.2rem;
-            }
-        }
-        
-        & .details {
-            display: flex;
-            flex-direction: column;
-            font-size: 1.2rem;
-        }
-    }
-}
-
-@media (min-width: 992px) {
-    .weatherContainer {
-        flex-direction: column;
-        margin: 0;
-        justify-content: center;
-        height: max-content;
-
-        & .details {
-            flex-direction: row;
-            justify-content: center;
-            height: max-content;
-
-            & li {
-                height: auto;
-            }
-        }
-    }
-
-    
-}
+@media (min-width: 992px) {}

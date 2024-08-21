@@ -1,196 +1,92 @@
-@keyframes logoAnimation {
-    0% {
-        opacity: 1;
-    }
-    20% {
-        opacity: .5;
-    }
-    40% {
-        opacity: 1;
-    }
-    60% {
-        opacity: .5;
-    }
-    80% {
-        opacity: 1;
-    }
-    90% {
-        opacity: .5;
-    }
-    100% {
-        opacity: 1;
-    }
+:root {
+    --sr-all-padding: 10px 15px;
+    --sr-primary-color: #343434;
+    --sr-secondary-color: #D0D0D0;
+    --sr-tertiary-color: #00A3FF;
+    --sr-color-text-input: #393939;
+
+    --sr-primary-font-size: 1rem;
+
+    --sr-primary-transparency: rgba(255, 255, 255, .4);
 }
 
-.container {
+.sr-container {
+    display: flex;
     height: 100%;
-    padding: 20px 10px;
     margin: 0 auto;
     text-align: center;
     background-image: url('../assets/sky.webp');
     background-size: cover;
     position: relative;
-
-    display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    gap: 20px;
 
-    & .forecastData {
-        background-color: rgba(255, 255, 255, .2);
-        border-radius: 10px;
-        padding: 5px;
-        margin-top: 10px;
+    & .sr-container-header {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 300px;
-        min-height: 200px;
-        transition: 1s;
-    }
-
-    & .logo {
-        width: 60px;
-        animation: logoAnimation 2.5s linear;
-    }
-
-    & input {
-        padding: 10px;
-        width: 210px;
-        outline: none;
-        margin-top: 20px;
-        background-color: transparent;
-        color: #b9b9b9;
-        text-align: center;
-        font-size: .8rem;
-        border: none;
-        border-bottom: 1px solid #ffffff37;
-
-        &::placeholder {
-            color: #c5c5c584;
-            font-size: .9rem;
-        }
-    }
-
-    & button {
-        background-color: transparent;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        border: none;
-        background-image: url('../assets/lupa.svg');
-        background-size: cover;
-        width: 25px;
-        height: 25px;
-    }
-
-    & .atribuition {
-        margin-top: 20px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
         width: 100%;
-        align-items: center;
-
-        & .atribuition-title {
-            font-size: .8rem;
-        }
-
-        & .atribuition-list {
-            list-style-type: none;
-            display: flex;
-            text-wrap: wrap;
-            gap: 5px;
-
-            & li {
-                & a {
-                    text-decoration: none;
-                    font-size: .8rem;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 576px) {
-    .container {
-        & .logo {
-            width: 80px;
-        }
-    
-        & input {
-            width: 280px;
-            font-size: 1.2rem;
-    
-            &::placeholder {
-                font-size: 1.1rem;
-            }
-        }
-    
-        & button {
-            width: 30px;
-            height: 30px;
-        }
-
-        & .atribuition {
-
-            & .atribuition-title {
-                font-size: 1rem;
-            }
-
-            & .atribuition-list {
-                & li {
-                    & a {
-                        text-decoration: none;
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        display: grid;
-        grid-template-areas: 
-        "logo logo"
-        "search search"
-        "today nextFourDays"
-        "atribuitions atribuitions";
-        justify-items: center;
+        height: max-content;
+        flex-direction: column;
+        padding: var(--sr-all-padding);
         gap: 10px;
-        justify-content: center;
 
-        & .forecastData {
-            flex-direction: row;
+        //Área aonde está o dominio do projeto
+        & .sr-header-domine {
+            text-align: left;
+
+            & .sr-domine-link {
+                color: var(--sr-secondary-color);
+                font-size: var(--sr-primary-font-size);
+
+                & span {
+                    color: var(--sr-tertiary-color);
+                    font-weight: bold;
+                }
+            }
         }
 
-        & .logo {
-            grid-area: logo;
-        }
+        //Área aonde está o input e o button
+        & .sr-header-search {
+            display: flex;
+            justify-content: center;
 
-        & .searshCity {
-            grid-area: search;
-        }
+            & .sr-search-input {
+                background-color: var(--sr-primary-transparency);
+                outline: none;
+                border: none;
+                border-radius: 20px 0 0 20px;
+                width: 75%;
+                height: 30px;
+                padding: 0 10px;
+                color: var(--sr-color-text-input);
+            }
 
-        & .weatherContainer {
-            grid-area: today;
-            gap: 0;
-            height: 340px;
-        }
+            & .sr-search-button {
+                background-image: url('../assets/lupa.svg');
+                background-size: 20px;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 30px;
+                height: 30px;
+                background-color: var(--sr-primary-transparency);
+                border: none;
+                border-radius: 0 20px 20px 0;
+                cursor: pointer;
 
-        & .weatherContainerFiveDays {
-            grid-area: nextFourDays;
+                &:hover {
+                    background-color: rgba(255, 255, 255, .6);
+                }
+            }
         }
-
-        & .atribuition {
-            grid-area: atribuitions;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
 
     }
+
+    & .sr-container-main {
+        width: 100%;
+    }
 }
+
+@media (min-width: 576px) {}
+
+@media (min-width: 992px) {}

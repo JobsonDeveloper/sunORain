@@ -87,20 +87,29 @@ function App() {
     window.speechSynthesis.speak(speaks);
   }
 
-
-
   return (
     <>
-      <section className='container'>
+      <section className='sr-container'>
 
-        <img src={logo} alt="Logo" className='logo' />
-        <div className='searshCity'>
-          <input ref={inputRef} type="text" placeholder='Nome da cidade' />
-          <button onClick={searchCity}></button>
-        </div>
+        {/* <img src={logo} alt="Logo" className='logo' /> */}
+        <header className='sr-container-header'>
+          <div className='sr-header-domine'>
+            <p className='sr-domine-link'>SunORain<span>.netlify.app</span></p>
+          </div>
+          <div className='sr-header-search'>
+            <input ref={inputRef} type="text" className='sr-search-input' />
+            <button onClick={searchCity} className='sr-search-button'></button>
+          </div>
+        </header>
 
-        <section className="forecastData">
+        <main className="sr-container-main">
           {weather && <WeatherInfo weather={weather} />}
+
+        </main>
+        {/* <div className='searshCity'>
+        </div> */}
+
+        {/* <section className="forecastData">
           {weatherFiveDays && <WeatherInfoFiveDays weatherFiveDays={weatherFiveDays} />}
         </section>
 
@@ -112,7 +121,7 @@ function App() {
             <li><a href="https://www.flaticon.com/br/icones-gratis/brilho-do-sol" title="brilho do sol ícones">Sol</a>, </li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/lupa" title="lupa ícones">Lupa</a></li>
           </ul>
-        </article>
+        </article> */}
       </section>
     </>
   )
