@@ -5,7 +5,7 @@
     --sr-tertiary-color: #00A3FF;
     --sr-color-text-input: #393939;
 
-    --sr-primary-font-size: 1rem;
+    --sr-primary-font-size: .9rem;
     --sr-secondary-font-size: 1.2rem;
 
     --sr-primary-transparency: rgba(255, 255, 255, .4);
@@ -31,6 +31,60 @@
         height: 200px;
         background-color: var(--sr-primary-transparency);
         border-radius: 0 20px 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+
+        & .sr-data-item {
+            background-color: rgb(80, 159, 248);
+
+            & .sr-item-forecastNow {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+
+                // Descrição do clima
+                & .sr-forecastNow-description {
+                    & .sr-description-text {
+                        font-size: var(--sr-primary-font-size);
+                        font-weight: bold;
+                        text-transform: capitalize;
+                    }
+                }
+
+                // Imagem de ilustração
+                & .sr-forecastNow-illustration {
+                    & .sr-illustration-img {
+                        width: 70px;
+                    }
+                }
+
+                // Temperatura atual
+                & .sr-forecastNow-temperature {
+                    & .sr-temperature-text {
+                        font-size: var(--sr-secondary-font-size);
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            & .sr-item-title {
+                font-size: var(--sr-primary-font-size);
+                font-weight: bold;
+            }
+
+            & .sr-item-temperatureList {
+                list-style-type: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background-color: green;
+
+                & .sr-temperatureList-itens {
+                    background-color: purple;
+                    height: max-content;
+                }
+            }
+        }
     }
 }
 

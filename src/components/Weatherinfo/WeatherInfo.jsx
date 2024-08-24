@@ -15,10 +15,38 @@ function WeatherInfo({ weather }) {
             </div>
 
             <ul className='sr-forecast-data'>
-                <li className="sr-data-item"></li>
-                <li className="sr-data-item"></li>
-                <li className="sr-data-item"></li>
-                <li className="sr-data-item"></li>
+                <li className="sr-data-item">
+                    <ul className='sr-item-forecastNow'>
+                        <li className='sr-forecastNow-description'>
+                            <p className='sr-description-text'>{weather.weather[0].description}</p>
+                        </li>
+                        <li className='sr-forecastNow-illustration'>
+                            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" className='sr-illustration-img'/>
+                        </li>
+                        <li className='sr-forecastNow-temperature'>
+                            <p className='sr-temperature-text'>{Math.round(weather.main.temp)}°C</p>
+                        </li>
+                    </ul>
+                </li>
+
+                <li className="sr-data-item">
+                    <h4 className='sr-item-title'>Temperatura</h4>
+                    <ul className='sr-item-temperatureList'>
+                        <li className='sr-temperatureList-itens'>Min:</li>
+                        <li className='sr-temperatureList-itens'>Max:</li>
+                        <li className='sr-temperatureList-itens'> {Math.round(weather.main.temp_min)}°C </li>
+                        <li className='sr-temperatureList-itens'> {Math.round(weather.main.temp_max)}°C </li>
+                    </ul>
+                </li>
+
+                <li className="sr-data-item">
+                    <h4>Sensação Térmica</h4>
+                    <p>{ Math.round(weather.main.feels_like) }°C</p>
+                </li>
+                <li className="sr-data-item">
+                    <h4>Humidade</h4>
+                    <p>{ weather.main.humidity }%</p>
+                </li>
             </ul>
 
 
