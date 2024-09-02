@@ -3,7 +3,7 @@ import './css/App.css'
 import axios from 'axios';
 import WeatherInfo from './components/Weatherinfo/WeatherInfo';
 import WeatherInfoFiveDays from './components/WeatherinfoFiveDays/WeatherInfoFiveDays.jsx';
-import logo from './assets/SunORain-logo.svg';
+// import logo from './assets/SunORain-logo.svg';
 
 function App() {
   const [weather, setWeather] = useState();
@@ -104,16 +104,14 @@ function App() {
 
         <main className="sr-container-main">
           {weather && <WeatherInfo weather={weather} />}
-
+          <section className="sr-forecastData">
+            {weatherFiveDays && <WeatherInfoFiveDays weatherFiveDays={weatherFiveDays} />}
+          </section>
         </main>
         {/* <div className='searshCity'>
         </div> */}
 
-        {/* <section className="forecastData">
-          {weatherFiveDays && <WeatherInfoFiveDays weatherFiveDays={weatherFiveDays} />}
-        </section>
-
-        <article className="atribuition">
+        {/* <article className="atribuition">
           <p className='atribuition-title'>Atribuições Freepik - Flaticon:</p>
 
           <ul className="atribuition-list">

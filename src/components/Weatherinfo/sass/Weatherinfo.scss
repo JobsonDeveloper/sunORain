@@ -1,93 +1,158 @@
 :root {
-    --sr-all-padding: 10px 15px;
-    --sr-primary-color: #343434;
-    --sr-secondary-color: #D0D0D0;
-    --sr-tertiary-color: #00A3FF;
-    --sr-color-text-input: #393939;
+  --sr-all-padding: 10px 15px;
+  --sr-primary-color: #343434;
+  --sr-secondary-color: #D0D0D0;
+  --sr-tertiary-color: #00A3FF;
+  --sr-color-text-input: #393939;
 
-    --sr-primary-font-size: .9rem;
-    --sr-secondary-font-size: 1.2rem;
+  --sr-primary-font-size: .9rem;
+  --sr-secondary-font-size: 1.2rem;
 
-    --sr-primary-transparency: rgba(255, 255, 255, .4);
+  --sr-primary-transparency: rgba(255, 255, 255, .4);
 }
 
 .sr-forecast-now {
-    background-color: red;
-    
-    & .sr-forecast-title {
-        background-color: green;
-        text-align: cente;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 
-        & .sr-city-name {
-            font-size: var(--sr-secondary-font-size);
-            color: var(--sr-secondary-color);
-        }
+  & .sr-forecast-title {
+    text-align: cente;
+
+    & .sr-city-name {
+      font-size: var(--sr-secondary-font-size);
+      color: var(--sr-secondary-color);
     }
+  }
 
-    & .sr-forecast-data {
-        background-color: red;
-        list-style-type: none;
-        width: 90%;
-        height: 200px;
-        background-color: var(--sr-primary-transparency);
-        border-radius: 0 20px 20px 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3px;
+  & .sr-forecast-data {
+    list-style-type: none;
+    width: max-content;
+    height: 200px;
+    background-color: var(--sr-primary-transparency);
+    border-radius: 20px;
+    display: flex;
+    justify-content: end;
+    padding: 5px;
 
-        & .sr-data-item {
-            background-color: rgb(80, 159, 248);
+    & .sh-data-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      padding: 2px;
+      width: max-content;
 
-            & .sr-item-forecastNow {
-                list-style-type: none;
-                display: flex;
-                flex-direction: column;
+      & .sr-data-item {
+        min-width: 135px;
 
-                // Descrição do clima
-                & .sr-forecastNow-description {
-                    & .sr-description-text {
-                        font-size: var(--sr-primary-font-size);
-                        font-weight: bold;
-                        text-transform: capitalize;
-                    }
-                }
+        & .sr-item-forecastNow {
+          list-style-type: none;
+          display: flex;
+          flex-direction: column;
 
-                // Imagem de ilustração
-                & .sr-forecastNow-illustration {
-                    & .sr-illustration-img {
-                        width: 70px;
-                    }
-                }
-
-                // Temperatura atual
-                & .sr-forecastNow-temperature {
-                    & .sr-temperature-text {
-                        font-size: var(--sr-secondary-font-size);
-                        font-weight: 700;
-                    }
-                }
+          // Descrição do clima
+          & .sr-forecastNow-description {
+            & .sr-description-text {
+              font-size: var(--sr-primary-font-size);
+              font-weight: bold;
+              text-transform: capitalize;
             }
+          }
 
-            & .sr-item-title {
-                font-size: var(--sr-primary-font-size);
-                font-weight: bold;
+          // Imagem de ilustração
+          & .sr-forecastNow-illustration {
+            & .sr-illustration-img {
+              width: 70px;
             }
+          }
 
-            & .sr-item-temperatureList {
-                list-style-type: none;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                background-color: green;
-
-                & .sr-temperatureList-itens {
-                    background-color: purple;
-                    height: max-content;
-                }
+          // Temperatura atual
+          & .sr-forecastNow-temperature {
+            & .sr-temperature-text {
+              font-size: var(--sr-secondary-font-size);
+              font-weight: 700;
             }
+          }
         }
+
+        & .sr-item-title {
+          font-size: var(--sr-primary-font-size);
+          font-weight: bold;
+        }
+
+        & .sr-item-temperatureList {
+          list-style-type: none;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 10px;
+
+          & .sr-temperatureList-itens {
+            height: max-content;
+            font-size: var(--sr-primary-font-size);
+          }
+        }
+
+        & .sr-item-sensacaoTermica {
+          font-size: var(--sr-primary-font-size);
+        }
+
+        & .sr-item-humidade {
+          font-size: var(--sr-primary-font-size);
+        }
+      }
     }
+  }
 }
 
-@media (min-width: 576px) {}
+@media (min-width: 482px) {
+  :root {
+    --sr-primary-font-size: 1.1rem;
+    --sr-secondary-font-size: 1.2rem;
+  }
+
+
+  .sr-forecast-now {
+    & .sr-forecast-data {
+      align-items: center;
+
+      & .sh-data-list {
+        height: max-content;
+
+        grid-template-areas:
+          "descricao temperatura senTermica"
+          "descricao temperatura humidade";
+
+        & .sr-item-descricao {
+          grid-area: descricao;
+
+          & .sr-item-forecastNow {
+          
+            // Imagem de ilustração
+            & .sr-forecastNow-illustration {
+              & .sr-illustration-img {
+                width: 85px;
+              }
+            }
+          }
+
+        }
+
+        & .sr-item-temperatura {
+          grid-area: temperatura;
+        }
+
+        & .sr-item-senTermica {
+          grid-area: senTermica;
+        }
+
+        & .sr-item-humidade {
+          grid-area: humidade;
+        }
+
+      }
+    }
+  }
+}
 
 @media (min-width: 992px) {}

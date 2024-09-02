@@ -10,10 +10,12 @@
 }
 
 .sr-forecast-now {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 .sr-forecast-now .sr-forecast-title {
-  background-color: green;
   text-align: cente;
 }
 .sr-forecast-now .sr-forecast-title .sr-city-name {
@@ -21,49 +23,90 @@
   color: var(--sr-secondary-color);
 }
 .sr-forecast-now .sr-forecast-data {
-  background-color: red;
   list-style-type: none;
-  width: 90%;
+  width: max-content;
   height: 200px;
   background-color: var(--sr-primary-transparency);
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: end;
+  padding: 5px;
+}
+.sr-forecast-now .sr-forecast-data .sh-data-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3px;
+  padding: 2px;
+  width: max-content;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item {
-  background-color: rgb(80, 159, 248);
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item {
+  min-width: 135px;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-forecastNow {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-forecastNow {
   list-style-type: none;
   display: flex;
   flex-direction: column;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-forecastNow .sr-forecastNow-description .sr-description-text {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-forecastNow .sr-forecastNow-description .sr-description-text {
   font-size: var(--sr-primary-font-size);
   font-weight: bold;
   text-transform: capitalize;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-forecastNow .sr-forecastNow-illustration .sr-illustration-img {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-forecastNow .sr-forecastNow-illustration .sr-illustration-img {
   width: 70px;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-forecastNow .sr-forecastNow-temperature .sr-temperature-text {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-forecastNow .sr-forecastNow-temperature .sr-temperature-text {
   font-size: var(--sr-secondary-font-size);
   font-weight: 700;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-title {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-title {
   font-size: var(--sr-primary-font-size);
   font-weight: bold;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-temperatureList {
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-temperatureList {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: green;
+  margin-top: 10px;
 }
-.sr-forecast-now .sr-forecast-data .sr-data-item .sr-item-temperatureList .sr-temperatureList-itens {
-  background-color: purple;
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-temperatureList .sr-temperatureList-itens {
   height: max-content;
+  font-size: var(--sr-primary-font-size);
+}
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-sensacaoTermica {
+  font-size: var(--sr-primary-font-size);
+}
+.sr-forecast-now .sr-forecast-data .sh-data-list .sr-data-item .sr-item-humidade {
+  font-size: var(--sr-primary-font-size);
+}
+
+@media (min-width: 482px) {
+  :root {
+    --sr-primary-font-size: 1.1rem;
+    --sr-secondary-font-size: 1.2rem;
+  }
+  .sr-forecast-now .sr-forecast-data {
+    align-items: center;
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list {
+    height: max-content;
+    grid-template-areas: "descricao temperatura senTermica" "descricao temperatura humidade";
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list .sr-item-descricao {
+    grid-area: descricao;
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list .sr-item-descricao .sr-item-forecastNow .sr-forecastNow-illustration .sr-illustration-img {
+    width: 85px;
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list .sr-item-temperatura {
+    grid-area: temperatura;
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list .sr-item-senTermica {
+    grid-area: senTermica;
+  }
+  .sr-forecast-now .sr-forecast-data .sh-data-list .sr-item-humidade {
+    grid-area: humidade;
+  }
 }
 
 /*# sourceMappingURL=Weatherinfo.css.map */

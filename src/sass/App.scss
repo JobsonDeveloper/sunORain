@@ -50,15 +50,17 @@
         & .sr-header-search {
             display: flex;
             justify-content: center;
+            width: 100%;
+            padding: 0 5px;
 
             & .sr-search-input {
                 background-color: var(--sr-primary-transparency);
                 outline: none;
                 border: none;
                 border-radius: 20px 0 0 20px;
-                width: 75%;
                 height: 30px;
                 padding: 0 10px;
+                width: 270px;
                 color: var(--sr-color-text-input);
             }
 
@@ -85,8 +87,108 @@
     & .sr-container-main {
         width: 100%;
     }
+
+    & .sr-forecastData {
+        width: 100%;
+    }
 }
 
-@media (min-width: 576px) {}
+@media (min-width: 482px) {
+    .sr-container {
+    
+        & .sr-container-header {
+    
+            //Área aonde está o dominio do projeto
+            & .sr-header-domine {
+                & .sr-domine-link {
+                }
+            }
+    
+            //Área aonde está o input e o button
+            & .sr-header-search {
+    
+                & .sr-search-input {
+                    width: 390px;
+                }
+    
+                & .sr-search-button {
+                }
+            }
+    
+        }
+    }
+}
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .sr-container {
+    
+        & .sr-container-header {
+            flex-direction: row;
+            justify-content: space-between;
+    
+            //Área aonde está o dominio do projeto
+            & .sr-header-domine {
+                & .sr-domine-link {
+                }
+            }
+    
+            //Área aonde está o input e o button
+            & .sr-header-search {
+                justify-content: end;
+    
+                & .sr-search-input {
+                    width: 180px;
+                }
+    
+                & .sr-search-button {
+                }
+            }
+    
+        }
+
+        & .sr-container-main {
+            display: flex;
+            padding: 0 10px;
+            justify-content: center;
+            gap: 50px;
+
+            
+         & .sr-forecastData {
+            width: auto;
+         }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .sr-container {
+    
+        & .sr-container-header {
+            flex-direction: row;
+            justify-content: space-between;
+    
+            //Área aonde está o dominio do projeto
+            & .sr-header-domine {
+                & .sr-domine-link {
+                    font-size: 1.4rem;
+                }
+            }
+    
+            //Área aonde está o input e o button
+            & .sr-header-search {
+                justify-content: end;
+    
+                & .sr-search-input {
+                    width: 250px;
+                    height: 35px;
+                }
+    
+                & .sr-search-button {
+                    height: 35px;
+                    width: 35px;
+                }
+            }
+    
+        }
+    }
+}

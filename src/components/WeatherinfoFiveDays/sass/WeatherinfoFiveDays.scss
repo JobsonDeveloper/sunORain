@@ -1,84 +1,97 @@
-.weatherContainerFiveDays {
-    border-radius: 10px;
+:root {
+    --sr-all-padding: 10px 15px;
+    --sr-primary-color: #343434;
+    --sr-secondary-color: #D0D0D0;
+    --sr-tertiary-color: #00A3FF;
+    --sr-color-text-input: #393939;
 
-    h2 {
-        font-size: 1.5rem;
-        padding: 10px 0;
-    }
+    --sr-primary-font-size: .9rem;
+    --sr-secondary-font-size: 1.2rem;
 
-    & .weatherList {
-        flex-wrap: wrap;
-        gap: 5px;
-        row-gap: 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 10px;
-
-        & .weatherItem {
-            text-align: center;
-            background-color: rgba(255, 255, 255, .2);
-            border-radius: 10px;
-            padding: 10px;
-            list-style-type: none;
-            padding: 0;
-            min-width: 130px;
-            width: 130px;
-
-            & .forecastDay,
-            & .forecastDescription {
-                text-transform: capitalize;
-                font-size: 1rem;
-                font-weight: bold;
-            }
-        }
-    }
+    --sr-primary-transparency: rgba(255, 255, 255, .4);
 }
 
-@media (min-width: 576px) {
-    .weatherContainerFiveDays {
-        h2 {
-            font-size: 1.4rem;
-        }
+.sr-proximosDias {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
 
-        & .weatherList {
-            grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 20px;
+    & .sr-proximosDias-data {
 
-            & .weatherItem {
-                padding: 5px;
-                width: 160px;
-
-                & li {
-                    font-size: 1rem;
-                }
-
-                & img {
-                    width: 80px;
-                }
-
-                & .forecastDay,
-                & .forecastDescription {
-                    font-size: 1rem;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .weatherContainerFiveDays {
-        & .weatherList {
+        & .sr-data-item {
             display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px 5px;
+            align-items: center;
+            min-width: 200px;
+
+            & .sr-item-title {
+                font-size: var(--sr-secondary-font-size);
+                color: var(--sr-secondary-color);
+            }
+
+            & .sr-data-info {
+                list-style-type: none;
+                display: flex;
+                background-color: var(--sr-primary-transparency);
+                border-radius: 10px;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 10px 0 0;
+                min-width: 300px;
+
+                & .sr-info-items {
+                    font-size: var(--sr-primary-font-size);
+                    display: flex;
+                    align-items: center;
+
+                }
+
+                & .sr-items-principais {
+                    background-color: var(--sr-primary-transparency);
+                    border-radius: 10px 0 0 10px;
+                    padding: 0 5px 0 0;
+                    width: 130px;
+                }
+
+                & .sr-info-temp {
+                    display: flex;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 482px) {
+    .sr-proximosDias {
+
+
+        & .sr-proximosDias-data {
+
+            & .sr-data-item {
+
+
+                & .sr-data-info {
+                    min-width: 420px;
+
+                    & .sr-info-items {}
+
+                    & .sr-items-principais {}
+
+                    & .sr-info-temp {}
+                }
+            }
         }
     }
 }
 
 @media (min-width: 992px) {
-    .weatherContainerFiveDays { 
-
-        & .weatherList {
-            display: flex;
-            justify-content: space-evenly;
-        }
+    .sr-forecast-title {
+        padding: 8px 0;
     }
 }
+
+@media (min-width: 992px) {}
